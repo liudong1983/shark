@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView 
+        android:id="@+id/book_name" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp" 
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/background_dark"/>
+	
+    <TextView 
+        android:id="@+id/book_stat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+          android:layout_marginTop="15dp"
+        />
+	<TextView 
+        android:id="@+id/book_author" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/book_name"
+        android:layout_marginLeft="10dp" 
+        android:layout_marginTop="5dp" 
+        android:layout_marginBottom="15dp"
+        android:textSize="12dp"/>
+	
+	<View 
+	    android:layout_width="0px"
+	    android:layout_height="0px"
+	    android:layout_below="@id/book_author"/>
+</RelativeLayout>
