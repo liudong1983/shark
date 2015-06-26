@@ -51,6 +51,7 @@ public class MainActivity extends Activity {
 		select_book_btn = (ImageButton) this.findViewById(R.id.button_book);
 		select_friend_btn = (ImageButton)this.findViewById(R.id.button_friend);
 		select_me_btn = (ImageButton) this.findViewById(R.id.button_msg);
+		select_book_btn.setImageResource(R.drawable.book_selected);
 		select_book_btn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -69,6 +70,8 @@ public class MainActivity extends Activity {
 				select_book_btn.setImageResource(R.drawable.book);
 				select_friend_btn.setImageResource(R.drawable.book_selected);
 				select_me_btn.setImageResource(R.drawable.me);
+				Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+				startActivity(intent);
 			}
 		});
 		
@@ -89,18 +92,6 @@ public class MainActivity extends Activity {
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		switch (MainActivity.select_flag) {
-		case 0:
-			MainActivity.select_flag = 0;
-			select_book_btn.setImageResource(R.drawable.book);
-		case 1:
-			MainActivity.select_flag = 1;
-			
-		case 2:
-		default:
-			break;
-		}
-		
 		this._booklist = dbhelper.readALLBook();
 		BookAdapter adapter = new BookAdapter(this, R.layout.book_item, this._booklist);
 		listview.setAdapter(adapter);

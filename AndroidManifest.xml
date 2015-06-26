@@ -48,6 +48,9 @@
     	
            <activity
             android:name=".testlayout.BookActivity"/>
+           
+           <activity 
+               android:name=".testlayout.SearchActivity" />
          
     </application>
 
