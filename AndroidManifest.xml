@@ -51,6 +51,9 @@
            
            <activity 
                android:name=".testlayout.SearchActivity" />
+           
+           <activity 
+               android:name=".testlayout.SearchResult" />
          
     </application>
 
