@@ -40,7 +40,6 @@ public class SearchActivity extends Activity {
 		this.setContentView(R.layout.activity_serach);
 		dbhelper = new DbHelper(this, "book_store.db", null, 1);
 		
-		this.booklist.add(new BookItem("test", "test"));
 		this.adapter = new SearchHintAdapter(SearchActivity.this, R.layout.search_hint, booklist);
 		ListView search_hint_list = (ListView) this.findViewById(R.id.search_hint_list);
 		search_hint_list.setAdapter(adapter);
@@ -132,7 +131,6 @@ public class SearchActivity extends Activity {
 			@Override
 			public boolean onQueryTextChange(String newText) {
 				// TODO Auto-generated method stub
-				Toast.makeText(SearchActivity.this, newText, Toast.LENGTH_SHORT).show();
 				SearchActivity.this.booklist.clear();
 				SearchActivity.this.dbhelper.readSearchBook(newText, SearchActivity.this.booklist);
 				SearchActivity.this.adapter.notifyDataSetChanged();
