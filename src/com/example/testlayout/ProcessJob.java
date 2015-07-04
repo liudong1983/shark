@@ -128,21 +128,6 @@ public class ProcessJob implements Runnable {
 		return bitmap;
 	}
 	
-	public boolean save_bitmap(Bitmap bitmap) {
-		boolean flag = false;
-		FileOutputStream out = null;
-		try {
-			out = this.ctx.openFileOutput("test", Context.MODE_PRIVATE);
-			bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
-			out.close();
-			flag = true;
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return flag;
-	}
-
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub

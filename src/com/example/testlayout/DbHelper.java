@@ -119,6 +119,35 @@ public class DbHelper extends SQLiteOpenHelper {
 		return false;
 	}
 	
+	public BookItem readBook(String isbn) {
+		BookItem item = null;
+		String query = "select book_isbn, book_name, book_author1, book_author2, book_author3, book_image, book_desc, book_status" 
+					+ " from book where book_isbn='" + isbn + "'";
+		SQLiteDatabase db = this.getWritableDatabase();
+		Cursor cursor = db.rawQuery(query, null);
+		if (cursor.moveToFirst())
+		{
+			String book_isbn = cursor.getString(cursor.getColumnIndex("book_isbn"));
+			String book_name = cursor.getString(cursor.getColumnIndex("book_name"));
+			String book_author1 = cursor.getString(cursor.getColumnIndex("book_author1"));
+			String book_author2 = cursor.getString(cursor.getColumnIndex("book_author2"));
+			String book_author3 = cursor.getString(cursor.getColumnIndex("book_author3"));
+			byte[] book_image = cursor.getBlob(cursor.getColumnIndex("book_image"));
+			String book_desc = cursor.getString(cursor.getColumnIndex("book_desc"));
+			int book_status = cursor.getInt(cursor.getColumnIndex("book_status"));
+			
+			item = new BookItem(book_isbn);
+			item.setbyteBitmap(book_image);
+			item.setBookName(book_name);
+			item.setBookAuthor(book_author1, book_author2, book_author3);
+			item.setBookDesc(book_desc);
+			item.setBookStatus(book_status);
+		}
+		cursor.close();
+		db.close();
+		return item;
+	}
+	
 	public ArrayList<BookItem> readSearchBook(String hint, ArrayList<BookItem> retlist) {
 		BookItem item = null;
 		SQLiteDatabase db = this.getWritableDatabase();
