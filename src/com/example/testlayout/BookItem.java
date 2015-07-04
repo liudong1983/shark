@@ -25,6 +25,12 @@ public class BookItem implements Serializable {
 		this._isbn = isbn;
 	}
 	
+	public BookItem(String book_name, String book_author)
+	{
+		this._name = book_name;
+		this._author1 = book_author;
+	}
+	
 	public String getBookISBN()
 	{
 		return this._isbn;

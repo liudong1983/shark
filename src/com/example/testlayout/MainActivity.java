@@ -26,7 +26,6 @@ public class MainActivity extends Activity {
 	private List<BookItem> _booklist = null;
 	private DbHelper dbhelper = null;
 	private ListView listview = null;
-	private ImageButton add_book_btn = null;
 	private ImageButton select_book_btn = null;
 	private ImageButton select_friend_btn = null;
 	private ImageButton select_me_btn = null;
@@ -37,16 +36,6 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		dbhelper = new DbHelper(this, "book_store.db", null, 1);
 		listview = (ListView) this.findViewById(R.id.book_list);
-		add_book_btn = (ImageButton) this.findViewById(R.id.add_book_item);
-		
-		add_book_btn.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
-				MainActivity.this.startActivity(intent);
-			}
-		});
 		
 		select_book_btn = (ImageButton) this.findViewById(R.id.button_book);
 		select_friend_btn = (ImageButton)this.findViewById(R.id.button_friend);

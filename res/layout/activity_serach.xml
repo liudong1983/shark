@@ -1,42 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent" 
+    android:orientation="vertical">
 
-     <RelativeLayout 
-        android:id="@+id/search_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/search_back"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:clickable="true"
-        android:layout_alignParentTop="true"
-        android:alpha="0.6"
-        >
-        <ImageView 
-            android:id="@+id/search_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/search_black_32"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            />
-        
-        <TextView 
-            android:id="@+id/search_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/search_pic"
-            android:text="搜书"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            />
-
-    </RelativeLayout>
-
-</RelativeLayout>
+	<SearchView
+	    android:id="@+id/search_view"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:iconifiedByDefault="false">
+	</SearchView> 
+	
+	<ListView
+            android:id="@+id/search_hint_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:background="#FFFFFF">
+    </ListView>
+    
+</LinearLayout>
