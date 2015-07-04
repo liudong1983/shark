@@ -148,7 +148,7 @@ public class DbHelper extends SQLiteOpenHelper {
 		return item;
 	}
 	
-	public ArrayList<BookItem> readSearchBook(String hint, ArrayList<BookItem> retlist) {
+	public void readSearchBook(String hint, ArrayList<BookItem> retlist) {
 		BookItem item = null;
 		SQLiteDatabase db = this.getWritableDatabase();
 		String query = "select book_isbn, book_name, book_author1, book_author2, book_author3, book_image, book_desc, book_status"
@@ -180,6 +180,5 @@ public class DbHelper extends SQLiteOpenHelper {
 		}
 		cursor.close();
 		db.close();
-		return retlist;
 	}
 }

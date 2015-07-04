@@ -1,5 +1,8 @@
 package com.example.testlayout;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -121,8 +124,15 @@ public class SearchActivity extends Activity {
 				// TODO Auto-generated method stub
 				SearchActivity.this.booklist.clear();
 				SearchActivity.this.dbhelper.readSearchBook(query, SearchActivity.this.booklist);
+				String url_query = null;
+				try {
+					url_query = URLEncoder.encode(query, "UTF-8");
+				} catch (UnsupportedEncodingException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				ProcessSearch searchjob = new ProcessSearch(SearchActivity.this, SearchActivity.this.search_handler, 
-						query, null, SearchActivity.this.booklist);
+						url_query, null, SearchActivity.this.booklist);
 				Thread t = new Thread(searchjob);
 				t.start();
 				return true;

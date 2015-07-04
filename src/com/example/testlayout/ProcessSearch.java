@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
@@ -23,7 +24,7 @@ import android.util.Log;
 
 public class ProcessSearch implements Runnable {
 	private static final String TAG = ProcessSearch.class.getName();
-	private final String douban_search_url = "https://api.douban.com/v2/book/search?count=10&&q=";
+	private final String douban_search_url = "https://api.douban.com/v2/book/search?count=50&q=";
 	private String search_url = null;
 	private Handler handler = null;
 	private String json_str = null;
