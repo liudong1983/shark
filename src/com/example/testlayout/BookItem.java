@@ -18,7 +18,8 @@ public class BookItem implements Serializable {
 	private String _author3 = null;
 	private String _desc = null;
 	private int _stat = 0;
-	private static final String stat_str[] = {"收藏", "可借", "借出"};
+	public static final String stat_str[] = {"我有,不借", "我有,可借", "我没有，想读", "随便看看"};
+	public static final String stat_str_ab[] = {"不借", "可借", "想读", "随便看看"};
 	
 	public BookItem(String isbn)
 	{
@@ -116,7 +117,7 @@ public class BookItem implements Serializable {
 	}
 	
 	public String getBookStatusStr() {
-		return stat_str[_stat];
+		return stat_str_ab[_stat];
 	}
 	
 	public void setBookAuthor(int idx, String author) {

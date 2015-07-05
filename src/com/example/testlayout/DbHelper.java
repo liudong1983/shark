@@ -51,7 +51,24 @@ public class DbHelper extends SQLiteOpenHelper {
 		// TODO Auto-generated method stub
 
 	}
-	
+	public boolean saveBook(BookItem item) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues values = new ContentValues();
+		values.put("book_name", item.getBookName());
+		values.put("book_author1", item.getBookAuthor1());
+		values.put("book_author2", item.getBookAuthor2());
+		values.put("book_author3", item.getBookAuthor3());
+		values.put("book_desc", item.getBookDesc());
+		values.put("book_status", item.getBookStatus());
+		values.put("book_image", item.getbyteBitmap());
+		values.put("create_time", new Date().getTime());
+		values.put("book_isbn", item.getBookISBN());
+		
+		if (db.update("book", values, "book_isbn=?", new String[]{item.getBookISBN()}) == -1)
+			return false;
+		db.close();
+		return true;
+	}
 	public boolean insertBook(BookItem item) {
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues values = new ContentValues();

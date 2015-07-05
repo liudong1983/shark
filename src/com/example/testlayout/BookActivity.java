@@ -6,8 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +27,7 @@ public class BookActivity extends Activity {
 	public TextView bookdesc_view = null;
 	public ImageView image_view = null;
 	public Button savebook_btn = null;
+	public Spinner book_status_view = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +46,27 @@ public class BookActivity extends Activity {
 		bookdesc_view = (TextView) this.findViewById(R.id.book_desc);
 		bookdesc_view.setText(item.getBookDesc());
 		savebook_btn = (Button) this.findViewById(R.id.save_book);
+		this.book_status_view = (Spinner) this.findViewById(R.id.book_status_spin);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, BookItem.stat_str);
+		this.book_status_view.setAdapter(adapter);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		this.book_status_view.setOnItemSelectedListener(new OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				item.setBookStatus(position);
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		flag = dbhelper.isexist(item);
 		if (flag) {
-			savebook_btn.setText("查看");
+			savebook_btn.setText("完成");
 		}
 
 		image_view.setImageBitmap(item.getBitmap());
@@ -65,6 +88,11 @@ public class BookActivity extends Activity {
 					Intent intent = new Intent(BookActivity.this,
 							MainActivity.class);
 					startActivity(intent);
+				} else {
+					if (!dbhelper.saveBook(item)) {
+						Toast.makeText(BookActivity.this, "保存失败", Toast.LENGTH_SHORT).show();
+					}
+					finish();
 				}
 			}
 		});

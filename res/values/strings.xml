@@ -5,5 +5,12 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="prompt_succ_str">扫描成功，正在获取数据</string>
+    <string name="prompt_status_choose_spin">请选择状态</string>
+    <string-array name="all_status">
+        <item >我有，不外借</item>
+        <item>我有，可外借</item>
+        <item>我没有，想读</item>
+        <item >随便看看</item>
+    </string-array>
 
 </resources>
