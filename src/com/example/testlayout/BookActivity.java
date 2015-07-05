@@ -50,6 +50,7 @@ public class BookActivity extends Activity {
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, BookItem.stat_str);
 		this.book_status_view.setAdapter(adapter);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		this.book_status_view.setSelection(this.item.getBookStatus());
 		this.book_status_view.setOnItemSelectedListener(new OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view,
