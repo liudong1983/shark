@@ -1,8 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.testlayout.MainActivity" >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,42 +21,11 @@
         </ListView>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/book_menu"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/menu_back" >
-
-        <ImageButton
-            android:id="@+id/button_book"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:src="@drawable/book" />
-
-        <ImageButton
-            android:id="@+id/button_friend"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:src="@drawable/friend" />
-
-        <ImageButton
-            android:id="@+id/button_msg"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:src="@drawable/me" />
-    </LinearLayout>
+  <com.example.testlayout.AppFoot
+      android:id="@+id/shelf_foot"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true">
+  </com.example.testlayout.AppFoot>
 
 </RelativeLayout>

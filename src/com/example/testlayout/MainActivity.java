@@ -26,9 +26,7 @@ public class MainActivity extends Activity {
 	private List<BookItem> _booklist = null;
 	private DbHelper dbhelper = null;
 	private ListView listview = null;
-	private ImageButton select_book_btn = null;
-	private ImageButton select_friend_btn = null;
-	private ImageButton select_me_btn = null;
+	private AppFoot foot = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,47 +34,8 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		dbhelper = new DbHelper(this, "book_store.db", null, 1);
 		listview = (ListView) this.findViewById(R.id.book_list);
-		
-		select_book_btn = (ImageButton) this.findViewById(R.id.button_book);
-		select_friend_btn = (ImageButton)this.findViewById(R.id.button_friend);
-		select_me_btn = (ImageButton) this.findViewById(R.id.button_msg);
-		select_book_btn.setImageResource(R.drawable.book_selected);
-		select_book_btn.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				MainActivity.select_flag = 0;
-				select_book_btn.setImageResource(R.drawable.book_selected);
-				select_friend_btn.setImageResource(R.drawable.friend);
-				select_me_btn.setImageResource(R.drawable.me);
-			}
-		});
-		select_friend_btn.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				MainActivity.select_flag = 1;
-				select_book_btn.setImageResource(R.drawable.book);
-				select_friend_btn.setImageResource(R.drawable.book_selected);
-				select_me_btn.setImageResource(R.drawable.me);
-				Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-				startActivity(intent);
-			}
-		});
-		
-		select_me_btn.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				MainActivity.select_flag = 2;
-				select_book_btn.setImageResource(R.drawable.book);
-				select_friend_btn.setImageResource(R.drawable.friend);
-				select_me_btn.setImageResource(R.drawable.book_selected);
-				Intent intent = new Intent(MainActivity.this, PersonActivity.class);
-				startActivity(intent);
-			}
-		});
-		
+		foot = (AppFoot) this.findViewById(R.id.shelf_foot);
+		foot.setIndex(0);
 	}
 	
 	@Override

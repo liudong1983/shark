@@ -1,12 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/locview"
+    android:layout_height="match_parent">
+    
+  <com.example.testlayout.AppTitle
+      	   android:id="@+id/person_title"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+       </com.example.testlayout.AppTitle>
+   
+   
+	 <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+         android:layout_below="@id/person_title" >
+        
+        <TextView
+            android:id="@+id/locview_prompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="您的位置:"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/locview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+	
+	 
+	 <com.example.testlayout.AppFoot
+      android:id="@+id/person_foot"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true">
+  </com.example.testlayout.AppFoot>
+</RelativeLayout>

@@ -29,5 +29,16 @@ public class BookLocation {
 	public void setRadius(double radius) {
 		this.radius = radius;
 	}
+	
+	public String getLoc() {
+		StringBuffer sb = new StringBuffer(256);
+		sb.append("地址:");
+		sb.append(this.addr);
+		sb.append(" 维度:");
+		sb.append(this.lat);
+		sb.append("经度:");
+		sb.append(this.lont);
+		return sb.toString();
+	}
 
 }
