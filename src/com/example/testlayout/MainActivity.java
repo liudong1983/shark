@@ -72,6 +72,8 @@ public class MainActivity extends Activity {
 				select_book_btn.setImageResource(R.drawable.book);
 				select_friend_btn.setImageResource(R.drawable.friend);
 				select_me_btn.setImageResource(R.drawable.book_selected);
+				Intent intent = new Intent(MainActivity.this, PersonActivity.class);
+				startActivity(intent);
 			}
 		});
 		
