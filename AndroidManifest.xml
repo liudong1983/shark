@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0" 
+    package="com.shark.shuyou">
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -46,7 +46,7 @@
 <uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
 
     <application
-        android:name=".testlayout.BookApplication"
+        android:name=".main.BookApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -56,7 +56,7 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="93b1fe01340eb789814c72f7945ca5b9" />
         <activity
-            android:name=".testlayout.MainActivity"
+            android:name=".main.MainActivity"
             android:launchMode="singleTask"
             android:label="@string/app_name" >
             <intent-filter>
@@ -66,19 +66,22 @@
         </activity>
         
          <activity
-            android:name=".zxing.activity.CaptureActivity"
+        	android:name=".zxing.activity.CaptureActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
     	</activity>
     	
            <activity
-            android:name=".testlayout.BookActivity"/>
+            android:name=".main.BookActivity"/>
            
            <activity 
-               android:name=".testlayout.SearchActivity" />
+               android:name=".main.SearchActivity" />
            
            <activity
-               android:name=".testlayout.PersonActivity"></activity>
+               android:name=".main.PersonActivity"></activity>
+           
+            <activity
+               android:name=".main.FriendActivity"></activity>
            
            <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
 		   </service>

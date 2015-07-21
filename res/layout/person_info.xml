@@ -3,11 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     
-  <com.example.testlayout.AppTitle
+  <com.shark.shuyou.main.AppTitle
       	   android:id="@+id/person_title"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
-       </com.example.testlayout.AppTitle>
+       </com.shark.shuyou.main.AppTitle>
    
    
 	 <LinearLayout
@@ -38,10 +38,10 @@
     </LinearLayout>
 	
 	 
-	 <com.example.testlayout.AppFoot
+	 <com.shark.shuyou.main.AppFoot
       android:id="@+id/person_foot"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_alignParentBottom="true">
-  </com.example.testlayout.AppFoot>
+  </com.shark.shuyou.main.AppFoot>
 </RelativeLayout>
